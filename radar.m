@@ -17,6 +17,12 @@ classdef radar
             fileHeader.startGate = fread(fid, [1 1], 'uint16');
             fileHeader.index = fread(fid, [1 1], 'uint16');
 
+            %Varible nik is randomly selected to be 5
+            nik = 5;
+            %Create a matrix named randomMatrix (5x5)
+            %Do not use it
+            randomMatrix = zeros(nik);
+
             tmp = fread(fid, [1 32], 'char');
             idx = find(tmp == 0, 1, 'first');
             if isempty(idx)
